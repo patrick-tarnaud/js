@@ -1,0 +1,96 @@
+<html>
+<head>
+	<style>
+		.bckred {
+			background-color: red;
+		}
+		.bckred.cblue {
+			border-radius: 25px;
+			font-weight: bold;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<p class='bckred' id='pp'>Illud autem non dubitatur quod cum esset aliquando virtutum omnium domicilium Roma, ingenuos advenas plerique nobilium, ut Homerici bacarum suavitate Lotophagi, humanitatis multiformibus officiis retentabant.</p>
+	<button id='btn'>Change !</button>
+	<!-- <p onClick='console.log("click")' ondblclick='console.log("double-click")'>lkjfdkgjfdlkjglkfdjglkdjglkf</p>-->
+	<!--<form action='#'>
+		nom : <input type='text' id='nom' name='id'> 
+		<input type='checkbox' id='cb' name='cb' value='car'> 
+		<input type='submit' value='Envoyer'>
+	</form>-->
+<script>
+document.querySelector('#btn').addEventListener('click', function() {
+	var pp = document.querySelector('#pp')
+	if (!pp.classList.contains('cblue'))
+		pp.classList.add('cblue')
+	else 	
+		pp.classList.remove('cblue')
+})
+/*
+class Polygone {
+  constructor(hauteur, largeur) {
+    this.hauteur = hauteur;
+    this.largeur = largeur;
+  }
+}
+
+class Carre extends Polygone {
+  constructor(longueurCote) {
+    super(longueurCote, longueurCote);
+  }
+  get aire() {
+    return this.hauteur * this.largeur;
+  }
+  set longueurCote(nouvelleLongueur) {
+    this.hauteur = nouvelleLongueur;
+    this.largeur = nouvelleLongueur;
+  }
+}
+
+var carre = new Carre(2);
+console.log('h',carre.hauteur)
+console.log('l',carre.largeur)
+console.log(carre.aire)
+carre.longueurCote = 4
+console.log('h',carre.hauteur)
+console.log('l',carre.largeur)
+console.log(carre.aire)
+*/
+
+/*
+function Person (p,n) {
+	this.prenom = p.toLowerCase()
+	this.nom = n.toUpperCase()
+}
+
+Person.prototype.compter = function() {
+	return this.prenom.length + this.nom.length
+}
+
+var p1 = new Person('Patrick','Tarnaud')
+var p2 = new Person('Sébastien','Bourgine')
+console.log(p1)
+console.log(p2)
+console.log(p1.compter())
+console.log(p2.compter())
+*/
+/*
+const list = document.getElementById("list");
+
+for (let i = 1; i <= 5; i++) {
+  var item = document.createElement("li");
+  list.id='bob'
+  item.appendChild(document.createTextNode("Élément " + i));
+
+  item.onclick = function (ev) {
+    console.log("Clic sur l'élément " + i + ".");
+  };
+  list.appendChild(item);
+}
+*/
+
+</script>
+</body>
+</html>
