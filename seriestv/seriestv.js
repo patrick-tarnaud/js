@@ -1,6 +1,9 @@
 (function() {
 
-  
+  /**
+   * Recherche des séries par l'API TV Maze
+   * @param {*} nom 
+   */
   let chercherSeries = (nom) => {
     let xhttp = new XMLHttpRequest()
     xhttp.onreadystatechange = function() {
@@ -15,22 +18,41 @@
   }
   
   let effacer = () => {
-    let ul = document.querySelector('#series')
-    ul.innerHTML=''
+    for (let i = 0; i< tseries.rows.length; i++) {
+      tseries.deleteRow(0)
+    }
+  }
+
+  let ajouterSerieDansTable = (serie) => {
+    let tr = null
+    let td = null
+    
+    tr = document.createElement('tr')
+    
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.id
+
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.name    
+
+    tseries.tBodies[0].appendChild(tr)
   }
 
   let afficherSeries = (series)  => {
     effacer()
     let ul = document.querySelector('#series')
+
+
     for (let serie of series) {
-      let li = document.createElement('li')
-      li.innerHTML=serie.show.name
-      ul.appendChild(li)
+      ajouterSerieDansTable(serie)
     }
   }
 
+  let tseries = document.querySelector('.tseries')
   let inputNom = document.querySelector('#nom')
   inputNom.addEventListener('input', () => chercherSeries(inputNom.value))
-  let chercherButton = document.querySelector('#chercher')
-  chercherButton.addEventListener('click', () => chercherSeries(inputNom.value))
+  let chercherBtn = document.querySelector('#chercherBtn')
+  chercherBtn.addEventListener('click', () => chercherSeries(inputNom.value))
 })()
