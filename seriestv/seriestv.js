@@ -17,9 +17,9 @@
     xhttp.send()
   }
   
-  let effacer = () => {
-    for (let i = 0; i< tseries.rows.length; i++) {
-      tseries.deleteRow(0)
+  let effacerTable = () => {
+    for (let i = 1; i< tseries.rows.length; i++) {
+      tseries.deleteRow(i)
     }
   }
 
@@ -28,23 +28,47 @@
     let td = null
     
     tr = document.createElement('tr')
-    
+
+    // id    
     td = document.createElement('td')
     tr.appendChild(td)
     td.innerText=serie.show.id
 
+    // name
     td = document.createElement('td')
     tr.appendChild(td)
     td.innerText=serie.show.name    
+
+    // genres
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.genres
+
+    // status
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.status
+
+    // premiered
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.premiered
+
+    // officialSite
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.officialSite
+
+    // rating
+    td = document.createElement('td')
+    tr.appendChild(td)
+    td.innerText=serie.show.rating.average
 
     tseries.tBodies[0].appendChild(tr)
   }
 
   let afficherSeries = (series)  => {
-    effacer()
-    let ul = document.querySelector('#series')
-
-
+    effacerTable()
     for (let serie of series) {
       ajouterSerieDansTable(serie)
     }
