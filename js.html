@@ -12,22 +12,25 @@
 	</style>
 </head>
 <body>
-	<p class='bckred' id='pp'>Illud autem non dubitatur quod cum esset aliquando virtutum omnium domicilium Roma, ingenuos advenas plerique nobilium, ut Homerici bacarum suavitate Lotophagi, humanitatis multiformibus officiis retentabant.</p>
-	<button id='btn'>Change !</button>
-	<!-- <p onClick='console.log("click")' ondblclick='console.log("double-click")'>lkjfdkgjfdlkjglkfdjglkdjglkf</p>-->
-	<!--<form action='#'>
-		nom : <input type='text' id='nom' name='id'> 
-		<input type='checkbox' id='cb' name='cb' value='car'> 
-		<input type='submit' value='Envoyer'>
-	</form>-->
+
+
 <script>
-document.querySelector('#btn').addEventListener('click', function() {
-	var pp = document.querySelector('#pp')
-	if (!pp.classList.contains('cblue'))
-		pp.classList.add('cblue')
-	else 	
-		pp.classList.remove('cblue')
-})
+/** TEST bubble event
+	<div onclick="appui1()">
+	Je suis dans la div
+		<a href='https://www.grafikart.fr' onclick='return appui2()'>Grafikart</a>
+		
+	</div>
+
+function appui1() {
+	console.log('appui1')
+}
+
+function appui2() {
+	console.log('appui2')
+	return false
+}
+*/
 /*
 class Polygone {
   constructor(hauteur, largeur) {
